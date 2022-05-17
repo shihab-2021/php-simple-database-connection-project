@@ -4,19 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Member Adding Form</title>
 </head>
 <style media="screen">
-    label{
-      display: block;
-    }
+  body{
+    background-color: #607d8b;
+  }
+  label {
+  width: 200px;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  }
+  .form_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .heading{
+    text-align: center;
+  }
+  .input{
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 3px;
+    width: 300px;
+    margin-top: 5px;
+  }
+  select{
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 3px;
+    width: 300px;
+    margin-top: 5px;  
+  }
+  #btn{
+    margin-left: 0;
+    border-radius: 0;
+    background: skyblue;
+    color: white;
+    border: none;
+    font-weight: 300;
+    padding: 10px 20px;
+    line-height: 1;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
   </style>
 <body>
-    <form class="" action="" method="post" autocomplete="off">
+  <h1 class="heading"><u>Member Adding Form</u></h1>
+  <div class="form_info">
+    <form class="" action="code.php" method="post">
       <label for="">Name</label>
-      <input type="text" name="name" required value="">
+      <input class="input" type="text" name="name" required value="">
       <label for="">Age</label>
-      <input type="number" name="age" required value="">
+      <input class="input" type="number" name="age" required value="">
       <label for="">Country</label>
       <select class="" name="country" required>
         <option value="" selected hidden>Select Country</option>
@@ -27,25 +69,13 @@
       <label for="">Gender</label>
       <input type="radio" name="gender" value="Male" required> Male
       <input type="radio" name="gender" value="Female"> Female
-      <label for="">Languages</label>
-      <input type="checkbox" name="languages[]" value="English">English
-      <input type="checkbox" name="languages[]" value="Chinese">Chinese
-      <input type="checkbox" name="languages[]" value="Spanish">Spanish
+      <label for="">Phone</label>
+      <input class="input" type="text" name="phone" required value="">
+      <label for="">Email</label>
+      <input class="input" type="email" name="email" required value="">
       <br>
-      <button type="submit" name="submit">Submit</button>
+      <button id="btn" type="submit" name="submit">Submit</button>
     </form>
+  </div>
 </body>
 </html>
-<?php
-    $name = $_POST("name");
-    $age = $_POST("age");
-    $country = $_POST("country");
-    $gender = $_POST("gender");
-    $language = $_POST("language");
-    $language = "";
-    foreach($languages as $row){
-      $language .= $row . ",";
-    }
-    $connection = mysqli_connect("localhost", "root", "", "database_practice_1");
-    mysqli_query($connection, "INSERT INTO member_info(member_name, age, country, gender, language)values('$name', '$age', '$country', '$gender', '$language')");
-?>
