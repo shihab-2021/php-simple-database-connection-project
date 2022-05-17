@@ -14,12 +14,14 @@
   width: 200px;
   font-weight: bold;
   display: block;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 20px;
   }
   .form_info{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 20px;
   }
   .heading{
     text-align: center;
@@ -27,9 +29,10 @@
   .input{
     border-radius: 5px;
     border: 1px solid;
-    padding: 3px;
+    padding: 5px;
     width: 300px;
     margin-top: 5px;
+    font-size: 20px;
   }
   select{
     border-radius: 5px;
@@ -37,6 +40,7 @@
     padding: 3px;
     width: 300px;
     margin-top: 5px;  
+    font-size: 20px;
   }
   #btn{
     margin-left: 0;
@@ -49,6 +53,7 @@
     line-height: 1;
     margin: 10px auto;
     border-radius: 10px;
+    margin-top: 15px;
   }
   </style>
 <body>
